@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title> 签到系统 </title>
+	<link rel="stylesheet"type="text/css"
+	href="jqueryui/css/ui-lightness/jquery-ui-1.8.23.custom.css"/>
+	<link rel="stylesheet" href="css/signIn.css" type="text/css" />
+	<script type="text/javascript" src="jqueryui/js/jquery-1.8.0.min.js">
+	</script>
+	<script type="text/javascript" src="jqueryui/js/jquery-ui-1.8.23.custom.min.js">
+	</script>
+	<script type="text/javascript" src="js/signIn.js"></script>
+</head>
+<body class="flora">
+<table width="780" border="0" cellspacing="1" align="center">
+<caption><h3>签到系统</h3></caption>
+<tr>
+<td height="60" colspan="2">
+<!-- 没有登录显示下面div元素 -->
+<div id="noLogin">
+<!-- 这里是注册/登录的表格 -->
+<table width="100%" border="0" cellspacing="0">
+<tr>
+	<td width="38%">用户名：
+		<input id="user" type="text" name="user" /></td>
+	<td width="38%">密&nbsp;&nbsp;码：
+		<input id="password" type="text" name="password" /></td>
+	<td width="24%">我还没有注册，请让我<a href="javascript:void(0);"
+		onclick="changeRegist();">注册</a></td>
+</tr>
+<tr>
+	<td colspan="5">
+	<div id="loginDiv" align="center">
+	<input id="login" type="button" onclick="proLogin();" value="登录" />
+	<input id="resetLogin" type="button" onclick="reset();" value="重设" />
+	</div>
+	<div id="registDiv" align="center" style="display:none">
+	<input id="regist" type="button" onclick="regist();" value="注册" />
+	<input id="resetRegist" type="button" onclick="reset();" value="重设" />
+	</div>
+	</td>
+</tr>
+</table>
+</div>
+<!-- 已经登录显示下面div元素 -->
+<div id="hasLogin" align="center" style="display:none">
+	您已经登录成功，下面是您的签到历史
+</div>
+</td>
+</tr>
+<tr>
+	<!-- 显示相片列表的元素 -->
+	<td width="400" height="440" valign="top">
+	<div align="center"><h3>历史签到列表</h3></div>
+	<div id="list"></div><hr />
+	</td>
+
+
+</tr>
+	<tr>
+		<td colspan="5">
+			<div id="notcheckInDiv" align="center">
+				<input id="notcheck" type="button" onclick="checkIn();" value="签到" />
+			</div>
+			<div id="hascheckInDiv" align="center" style="display:none">
+				<input id="hascheck" type="button"  value="已签到" />
+			</div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
